@@ -41,9 +41,9 @@ app.get('/app', checkSignIn, (req, res) => {
 app.get('/home', checkSignIn, (req, res) => {
     fs.readFile(__dirname + '/users/' + fileName, 'utf8', async (err, file) => {
         if (err) {
-            res.render('home', { file: "error" });
+            res.render('home', { file: "error", name: req.session.user.name });
         } else if (file == '') {
-            res.render('home', { file: "empty" });
+            res.render('home', { file: "empty", name: req.session.user.name });
         } else {
             const apps = await JSON.parse(file);
             res.render('home', { file: apps, name: req.session.user.name });

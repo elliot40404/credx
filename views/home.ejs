@@ -27,15 +27,19 @@
             <% } else if (file==='empty' ) { %>
             <h1 class="error">SO VERY EMPTY</h1>
             <% } else { %> <% file.cred.forEach(e=> { %>
-            <div class="cards">
+            <div class="cards" id="item-<%= e.id %> ">
+                <div class="del" id="<%= e.id %>" >
+                    <i class="fas fa-times"></i>
+                </div>
                 <% const icon=e.name.toLowerCase() %>
                 <p><i class="fab fa-<%= icon %>"></i></p>
                 <h1><%= e.name %></h1>
-                <h4>username : <%= e.email %></h4>
-                <label for="pass">password</label>
+                <h4>Username</h4>
+                <h4><%= e.email %></h4>
+                <label for="pass">Password</label>
                 <input readonly name="pass" type="password" value="<%= e.pass %>" />
                 <button class="sh">
-                    show
+                    <i class="fas fa-eye"></i>
                 </button>
                 <% if (e.url !=='' ) { %>
                 <p>website : <a href="https://<%= e.url %>" target="_blank"><%= e.url %></a></p>
@@ -53,25 +57,7 @@
         </main>
     </div>
     <!-- JS HERE -->
-    <script>
-        const all = document.querySelectorAll("button");
-        all.forEach((elem) =>
-            elem.addEventListener("click", (e) => {
-                const type = e.target.parentNode
-                    .querySelector("input")
-                    .getAttribute("type");
-                if (type === "password") {
-                    e.target.parentNode
-                        .querySelector("input")
-                        .setAttribute("type", "text");
-                } else {
-                    e.target.parentNode
-                        .querySelector("input")
-                        .setAttribute("type", "password");
-                }
-            })
-        );
-    </script>
+    <script defer src="./../js/home.js"></script>
 </body>
 
 </html>
