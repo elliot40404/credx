@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+    <title>HOME</title>
+    <link rel='stylesheet' href='./../css/main.css'>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <p>Welcome <%= name %>
+            </p>
+            <form method="POST" action="/logout">
+                <button type="submit">LOG OUT</button>
+            </form>
+        </nav>
+        <main class="basic-grid">
+            <% if (file==='error' ) { %>
+            <h1 class="error">
+                ERROR occured while retriving your data please try after some time
+            </h1>
+            <% } else if (file==='empty' ) { %>
+            <h1 class="error">SO VERY EMPTY</h1>
+            <% } else { %> <% file.cred.forEach(e=> { %>
+            <div class="cards">
+                <% const icon=e.name.toLowerCase() %>
+                <p><i class="fab fa-<%= icon %>"></i></p>
+                <h1><%= e.name %></h1>
+                <h4>username : <%= e.email %></h4>
+                <label for="pass">password</label>
+                <input readonly name="pass" type="password" value="<%= e.pass %>" />
+                <button class="sh">
+                    show
+                </button>
+                <% if (e.url !=='' ) { %>
+                <p>website : <a href="https://<%= e.url %>" target="_blank"><%= e.url %></a></p>
+                <% } %>
+            </div>
+            <% }) %> <% } %>
+            <div class="cards">
+                <a class="add" href="/app">
+                    <p>
+                        Add new
+                    </p>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </div>
+        </main>
+    </div>
+    <!-- JS HERE -->
+    <script>
+        const all = document.querySelectorAll("button");
+        all.forEach((elem) =>
+            elem.addEventListener("click", (e) => {
+                const type = e.target.parentNode
+                    .querySelector("input")
+                    .getAttribute("type");
+                if (type === "password") {
+                    e.target.parentNode
+                        .querySelector("input")
+                        .setAttribute("type", "text");
+                } else {
+                    e.target.parentNode
+                        .querySelector("input")
+                        .setAttribute("type", "password");
+                }
+            })
+        );
+    </script>
+</body>
+
+</html>

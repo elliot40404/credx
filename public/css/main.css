@@ -1,0 +1,423 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cont {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("./../assets/bg.jpg");
+}
+
+.intro {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  color: white;
+}
+
+.intro h1 {
+  font-size: 60px;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 10px;
+  margin: 50px 50px 10px;
+}
+
+.intro h2 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.main {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 150px;
+}
+
+.main .card {
+  height: 400px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.575);
+  border-radius: 36px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.main .card a {
+  text-decoration: none;
+  color: #0f0;
+  font-size: 30px;
+}
+
+.main .card a:hover {
+  color: red;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.main .card:hover {
+  -webkit-transform: scale(1.1) translateZ(2px) translateY(5px);
+          transform: scale(1.1) translateZ(2px) translateY(5px);
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("./../assets/bg2.jpg");
+  position: relative;
+  color: white;
+}
+
+.blur {
+  height: 600px;
+  width: 400px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 36px;
+}
+
+.form {
+  background: rgba(0, 0, 0, 0.5);
+  height: 600px;
+  width: 400px;
+  border-radius: 36px;
+  background: transparent;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form h1 {
+  margin: 100px 0px 30px;
+  font-size: 40px;
+}
+
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.form form input {
+  width: 70%;
+  height: 30px;
+  border-radius: 36px;
+  padding: 0px 15px;
+  font-weight: 700;
+}
+
+.form form label {
+  font-size: 18px;
+}
+
+.form p {
+  font-size: 20px;
+}
+
+.form a {
+  margin: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.form button {
+  padding: 10px 15px;
+  border-radius: 36px;
+  border: 3px solid #167e16;
+  font-size: 18px;
+}
+
+.form button:hover {
+  background: #167e16;
+  color: #fff;
+}
+
+.formsu {
+  background: rgba(0, 0, 0, 0.7);
+  height: 700px;
+  width: 400px;
+  border-radius: 36px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.formsu h1 {
+  margin: 50px 0px 20px;
+  font-size: 30px;
+}
+
+.formsu form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.formsu form input {
+  width: 70%;
+  height: 30px;
+  border-radius: 36px;
+  padding: 0px 15px;
+  font-weight: 700;
+}
+
+.formsu form label {
+  font-size: 18px;
+}
+
+.formsu p {
+  font-size: 18px;
+}
+
+.formsu a {
+  margin: 50px;
+  color: white;
+  font-size: 18px;
+}
+
+.formsu button {
+  padding: 10px 15px;
+  border-radius: 36px;
+  border: 3px solid #167e16;
+  font-size: 18px;
+}
+
+.formsu button:hover {
+  background: #167e16;
+  color: #fff;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("./../assets/bg2.jpg");
+  color: #fff;
+}
+
+.container nav {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background: black;
+  color: white;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.container .basic-grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: minmax(300px, 1fr);
+  padding: 1rem;
+}
+
+.container .cards {
+  /* height: 300px; */
+  width: auto;
+  border: 2px solid black;
+  border-radius: 36px;
+  background: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container input {
+  text-align: center;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+.container .add {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.container .sh {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.container button {
+  color: white;
+  font-size: 20px;
+  background: none;
+  border: none;
+}
+
+.container .error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container i {
+  font-size: 30px;
+}
+
+.redirect {
+  background-image: url("./../assets/bg2.jpg");
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.redirect h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.redirect h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.redirect h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+}
+/*# sourceMappingURL=main.css.map */

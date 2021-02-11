@@ -1,0 +1,11 @@
+node_modules
+# *.scss
+# *.map
+# logs.txt
+# .vscode
+# *.test.js
+# users.json
+# users/
+# restore_point.js
+# .env
+

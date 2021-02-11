@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD NEW</title>
+    <link rel="shortcut icon" href="./../assets/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='./../css/main.css'>
+</head>
+
+<body>
+    <div class="login">
+        <div class="formsu">
+            <h1>ADD NEW</h1>
+            <form action="/app" method="POST">
+                <label for="name">App Name</label>
+                <input required name="name" autocomplete="off" type="text">
+                <label for="email">User Id</label>
+                <input required name="email" autocomplete="off" type="email">
+                <label for="pass">Password</label>
+                <input required name="pass" autocomplete="off" type="password">
+                <label for="url">URL</label>
+                <input name="url" autocomplete="off" type="text">
+                <button type="submit">CREATE</button>
+            </form>
+            <a href="/home">BACK</a>
+        </div>
+    </div>
+</body>
+
+</html>
