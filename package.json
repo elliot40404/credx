@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon --watch server.test.js",
+    "test": "nodemon server.test.js --ignore users/",
     "dev": "nodemon --watch server.js",
     "start": "node server.js",
     "try": "node app.test.js"
@@ -21,7 +21,6 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.11.15"
+    "method-override": "^3.0.0"
   }
 }

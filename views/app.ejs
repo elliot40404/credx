@@ -8,6 +8,11 @@
     <title>ADD NEW</title>
     <link rel="shortcut icon" href="./../assets/favicon.ico" type="image/x-icon">
     <link rel='stylesheet' href='./../css/main.css'>
+    <style>
+        input:invalid {
+            background: rgba(255, 0, 0, 0.267);
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +27,7 @@
                 <label for="pass">Password</label>
                 <input required name="pass" autocomplete="off" type="password">
                 <label for="url">URL</label>
-                <input name="url" autocomplete="off" type="text">
+                <input placeholder="Do not include http:// or https://" name="url" title="Do not include http:// or https://" autocomplete="off" type="text">
                 <button type="submit">CREATE</button>
             </form>
             <a href="/home">BACK</a>
