@@ -7,6 +7,12 @@
     <title>SIGNUP</title>
     <link rel='stylesheet' href='./../css/main.css'>
     <link rel="shortcut icon" href="./../assets/favicon.ico" type="image/x-icon">
+    <style>
+        input:invalid {
+            background: rgba(255, 0, 0, 0.459);
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="login">
@@ -14,13 +20,13 @@
             <h1>Sign Up</h1>
             <form action="/signup" method="POST">
                 <label for="name">Name</label>
-                <input autofocus required name="name" autocomplete="off" type="text">
+                <input autofocus pattern="^[a-zA-Z_ ]*$" minlength="3" title="Name should only be alphabetical and more than 4 letters" required name="name" autocomplete="off" type="text">
                 <label for="email">Email-id</label>
-                <input required name="email" autocomplete="off" type="email">
+                <input required name="email" autocomplete="off" minlength="5" pattern="[a-z0-9._%+-]+@([a-z]{3,})+\.[a-z]{2,}$" type="email">
                 <label for="pass">Password</label>
-                <input required name="pass" autocomplete="off" type="password">
+                <input required id="pass" name="pass" autocomplete="off" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
                 <label for="cpass">Confirm Password</label>
-                <input required name="cpass" autocomplete="off" type="password">
+                <input required id="cpass" name="cpass" autocomplete="off" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&]{8,}$">
                 <button type="submit">CREATE</button>
             </form>
             <% if (msg) { %>
@@ -31,5 +37,6 @@
             <a href="/login">LOGIN</a>
         </div>
     </div>
+    <script defer src="./../js/verify.js"></script>
 </body>
 </html>

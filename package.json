@@ -7,7 +7,7 @@
     "test": "nodemon --watch server.test.js",
     "dev": "nodemon --watch server.js",
     "start": "node server.js",
-    "try": "nodemon --watch app.test.js"
+    "try": "node app.test.js"
   },
   "keywords": [],
   "author": "",

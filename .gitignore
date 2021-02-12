@@ -1,11 +1,12 @@
 node_modules
-# *.scss
-# *.map
-# logs.txt
+*.scss
+*.map
+logs.txt
 .vscode
-# *.test.js
-# users.json
-# users/
-# restore_point.js
+server.test.js
+app.test.js
+users.json
+users/
+restore_point.js
 .env
 
