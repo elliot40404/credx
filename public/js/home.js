@@ -1,4 +1,4 @@
-const all = document.querySelectorAll(".sh");
+const all = document.querySelectorAll(".fa-eye");
 all.forEach((elem) =>
     elem.addEventListener("click", (e) => {
         const type = e.target.parentNode.parentNode

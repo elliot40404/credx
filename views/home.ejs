@@ -31,16 +31,17 @@
                 <div class="del" id="<%= e.id %>" >
                     <i class="fas fa-times"></i>
                 </div>
-                <% const icon=e.name.toLowerCase() %>
+                <% const icon = e.name.toLowerCase() %>
                 <p><i class="fab fa-<%= icon %>"></i></p>
                 <h1><%= e.name %></h1>
                 <h4>Username</h4>
                 <h4><%= e.email %></h4>
                 <label for="pass">Password</label>
-                <input readonly name="pass" type="password" value="<%= e.pass %>" />
-                <button class="sh">
+                <input id="passw" readonly name="pass" type="password" value="<%= e.pass %>" />
+                <div class="sh">
                     <i class="fas fa-eye"></i>
-                </button>
+                    <i class="fas fa-copy" data-clipboard-text="<%= e.pass %>"></i>
+                </div>
                 <% if (e.url !=='' ) { %>
                 <p>website : <a href="https://<%= e.url %>" target="_blank"><%= e.url %></a></p>
                 <% } %>
@@ -51,13 +52,17 @@
                     <p>
                         Add new
                     </p>
-                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <i class="fa fa-plus"></i>
                 </a>
             </div>
         </main>
     </div>
     <!-- JS HERE -->
     <script defer src="./../js/home.js"></script>
+    <script src="./../js/clipboard.min.js"></script>
+    <script>
+        new ClipboardJS('.fa-copy');
+    </script>
 </body>
 
 </html>

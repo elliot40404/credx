@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.test.js --ignore users/",
-    "dev": "nodemon server.js --ignore users/",
+    "test": "nodemon --watch server.test.js",
+    "dev": "nodemon --watch server.js",
     "start": "node server.js",
-    "try": "node server.test.js"
+    "try": "nodemon --watch app.test.js"
   },
   "keywords": [],
   "author": "",

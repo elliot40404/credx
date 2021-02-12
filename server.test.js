@@ -4,7 +4,6 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const { ifError } = require('assert');
 require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false, limit: '150mb' }));
@@ -208,7 +207,7 @@ app.get('/:id', (req, res) => {
 // ! STARTING TO LISTEN ON SERVER
 
 app.listen(process.env.PORT, process.env.IP, () => {
-    console.log(`Server started at http://${process.env.IP}:${process.env.PORT}`);
+    console.log(`Test Server started at http://${process.env.IP}:${process.env.PORT}`);
 });
 
 //  TODO 
