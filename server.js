@@ -3,6 +3,7 @@ const app = express();
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const methodOverride = require('method-override');
 require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false, limit: '150mb' }));
@@ -12,6 +13,11 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+app.use(methodOverride('_method'));
+
+const PORT = process.env.PORT || 80;
+const IP = process.env.IP || "127.0.0.1"
 
 // ! check required directories
 
@@ -51,6 +57,25 @@ app.get('/home', checkSignIn, (req, res) => {
         });
 });
 
+// ! DELETE REQ
+
+app.delete('/delete', checkSignIn, (req, res) => {
+    const id = req.query.id;
+    fs.readFile(__dirname + '/users/' + fileName, 'utf8', async (err, file) => {
+        if (err) {
+            console.error(err);
+        } else {
+            let apps = await JSON.parse(file);
+            apps.cred = apps.cred.filter((e) => e.id != id);
+            if (apps.cred.length > 0) {
+                fs.writeFileSync(__dirname + '/users/' + fileName, JSON.stringify(apps));
+            } else {
+                fs.writeFileSync(__dirname + '/users/' + fileName, '');
+            }
+            res.status(204).redirect('/home');
+        }
+    });
+});
 
 // ! POST REQ
 
@@ -188,7 +213,7 @@ app.get('/:id', (req, res) => {
 // ! STARTING TO LISTEN ON SERVER
 
 app.listen(process.env.PORT, process.env.IP, () => {
-    console.log(`Server started at http://${process.env.IP}:${process.env.PORT}`);
+    console.log(`Server started at http://${IP}:${PORT}`);
 });
 
 //  TODO 
@@ -201,13 +226,13 @@ app.listen(process.env.PORT, process.env.IP, () => {
 // * error 404 page
 // * Session management
 // * add styling
-// ! A case for a email with _ in the exact place of a '.' . For e.g. tim.man@gmail.com & tim_man@gmail.com.
-// ! Perfectly Unique file names to minimize chances of conflict
+// * A case for a email with _ in the exact place of a '.' . For e.g. tim.man@gmail.com & tim_man@gmail.com.
+// * Perfectly Unique file names to minimize chances of conflict
+// * password validation
 // ! add a log file
-// ! password validation
+// ! Forgot password option
 // ! PWA config
 // ! caching strategies
-// ! Forgot password option
 // ? ADMIN  PRIVILEGES
 // ? MONGODB ALTERNATIVE
 // ? PASSPORT LOGIN
