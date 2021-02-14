@@ -10,3 +10,5 @@ users/
 restore_point.js
 .env
 ssl/
+*.exe
+dist/
