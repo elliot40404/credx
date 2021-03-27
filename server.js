@@ -16,9 +16,6 @@ app.use(session({
 
 app.use(methodOverride('_method'));
 
-const PORT = process.env.PORT || 80;
-const IP = process.env.IP || "127.0.0.1"
-
 // ! check required directories
 
 if (!fs.existsSync(__dirname + '/users')) {
