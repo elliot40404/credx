@@ -12,3 +12,4 @@ restore_point.js
 ssl/
 *.exe
 dist/
+test.*
