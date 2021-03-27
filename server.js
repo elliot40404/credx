@@ -4,7 +4,9 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const methodOverride = require('method-override');
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false, limit: '150mb' }));
 app.use(express.static(__dirname + '/public'));
