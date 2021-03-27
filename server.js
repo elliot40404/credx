@@ -212,8 +212,8 @@ app.get('/:id', (req, res) => {
 
 // ! STARTING TO LISTEN ON SERVER
 
-app.listen(process.env.PORT, process.env.IP, () => {
-    console.log(`Server started at http://${IP}:${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server started`);
 });
 
 //  TODO 
