@@ -4,10 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.test.js --ignore users/",
     "dev": "nodemon --watch server.js",
-    "start": "node server.js",
-    "try": "node app.test.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
